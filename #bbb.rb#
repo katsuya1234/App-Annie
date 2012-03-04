@@ -1,0 +1,8 @@
+
+
+
+i = 1 
+while i < 301
+  p i 
+  i += 1 
+end 

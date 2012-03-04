@@ -1,0 +1,38 @@
+
+
+
+
+require 'rubygems'
+require 'mechanize'
+require 'nokogiri'
+######### ’ÂÐ’¾ÝURL’¤Î’ÇÛ’Îó’Æþ’ÎÏ                                                                                                                                                                               
+@a = Array.new()
+@b = Array.new()
+
+@b = ['http://www.appannie.com/top/iphone/united-states/overall/','http://www.appannie.com/top/iphone/united-states/overall/']
+
+######### ’ÆÃ’ÄêURL’¤Î’¥Æ’¥­’¥¹’¥È’¥Ç’¡¼’¥¿’¤ò’ÇÛ’Îó’¤Ë’Æþ’ÎÏ                                                                                                                                                             
+require 'rubygems'
+require 'mechanize'
+
+a = Mechanize.new { |agent|
+  agent.user_agent_alias = 'Mac Safari'
+}
+
+@b.each do |x|
+  page = a.get(x)
+
+ puts page.html_parser
+
+  page.links.each do |link|
+    link
+  end
+
+#  print @a
+  print ','
+  puts @a.length
+  puts @a.class
+
+  @a = Array.new()
+end
+
